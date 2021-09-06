@@ -8,21 +8,27 @@
         /* css 코딩구역! */
         /* 이 방식은 페이지 내부에  */
         /* 문법: 선택자{속성: 값} */
-        body{
-            background: rgb(230,240,254);
+        body {
+            background: rgb(230, 240, 254);
         }
-        a{
+
+        a {
             text-decoration: none;
-            color:#000;
+            color: #000;
         }
-        footer{
+
+        footer {
             text-align: center;
-            padding: 30px 0; /* 안쪽 여백 위 아래 19px */
-          
+            padding: 30px 0;
+            /* 안쪽 여백 위 아래 19px */
+
         }
-        address{font-style: normal;}
+
+        address {
+            font-style: normal;
+        }
     </style>
-    
+
 </head>
 
 <body>
@@ -34,16 +40,16 @@
                         단, 자식 style이 기본 지정된 style 속성이 이미 있을 때는 상속이 안된다.
 
             -> 값으로 css문법을 그대로 쓴다!
-            -> 기본 css 문법
+            -> 기본 css 문법 
             속성명: 값;
             ex) width:727px; 가로크기를 727px로 설정
             margin: 0 위 아래 여백 0
             auto: 양쪽 등분
         -->
         <!--1.상단영역-->
-        <header style = "text-align: center;"">
+        <header style="text-align: center;"">
             <!--1-1.제목-->
-            <h1 style = "font-size:40px" >네이버 요약 뉴스 - 메인 페이지</h1>
+            <h1 style = " font-size:40px">네이버 요약 뉴스 - 메인 페이지</h1>
             <!--1-2.메뉴-->
             <nav>
                 <a href=""> <img src="./images/logo.png" alt="로고" style="width: 20px ;vertical-align: bottom;"></a>
@@ -51,11 +57,11 @@
                     image는 가로만 설정해도 비율에 맞게 변경
                 -->
                 &nbsp;
-                <a href="sub1.html" style ="color:red">정치</a> |
-                <a href="sub2.html" style ="color:orange">경제</a> |
-                <a href="sub3.html" style ="color:green">사회</a> |
-                <a href="sub4.html" style ="color:blue">IT과학</a> |
-                <a href="sub5.html" style ="color:purple">TV연예</a>
+                <a href="sub1.html" style="color:red">정치</a> |
+                <a href="sub2.html" style="color:orange">경제</a> |
+                <a href="sub3.html" style="color:green">사회</a> |
+                <a href="sub4.html" style="color:blue">IT과학</a> |
+                <a href="sub5.html" style="color:purple">TV연예</a>
             </nav>
         </header>
         <hr>
@@ -68,16 +74,98 @@
                 - art : 이미지 설명
                 (alternatinve text - 대체 텍스트 웹 접근성을 위한 필수 속성)
             -->
+            <h3>오늘의 명화</h3>
+
+            <img src="https://www.w3schools.com/html/img_the_scream.jpg" alt="뭉크의 절규" style="width: 100px;">
+            <br>
+            <hr>
+            <h3>
+                연합뉴스 주요뉴스
+            </h3>
+            <ul>
+                <li><a href="http://www.thetopic.co.kr/camp/frog/w_a2/index_sang_adtive.html?urlGubun=adtive_w_yh&adpx_be_cd=868_19817_4042_112655"
+                        target="_blank">배우 김상중, 주식으로 대박 수익낸 업체와 손잡아 화제</a></li>
+                <li><a href="https://www.kodcad.kr/ad/43/568f3987252f538add5408b6b73c2a7c.html?k_referer=https%3A%2F%2Fwww.yna.co.kr%2F"
+                        target="_blank">흡연습관 그대로? 금연에 성공하는 "이것" 연일 화제</a></li>
+                <li><a href="http://ebong2018.cafe24.com/landing/landing05.php?utm_source=adtive2&utm_medium=cpp&utm_content=mo&adpx_be_cd=868_19818_1559_112954"
+                        target="_blank">이명 귓속 삐 울리는 소리 방치했다간</a></li>
+            </ul>
+            <hr>
+            <h3>연합뉴스 랭킹 뉴스</h3>
+            <ol>
+                <li>
+                    <a href="" target="_blank">
+
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+
+                    </a>
+                </li>
+            </ol>
+            <hr>
+            <h3>분야별 주요뉴스</h3>
+            <dl>
+                <dt>정치</dt>
+                <dd><a href="https://www.yna.co.kr/view/AKR20210906102700001?section=politics/all" target="_blank">[1보]
+                        문대통령 "새 방역체계로 점진적 전환 모색"</a>
+                </dd>
+                <dt>경제</dt>
+                <dd><a href="https://www.yna.co.kr/view/AKR20210906020900530?section=economy/all" target="_blank">"여성
+                        경력단절 예방법, 여성 선배·전문가 조언 들어보세요"</a>
+                </dd>
+                <dt>사회</dt>
+                <dd><a href="https://www.yna.co.kr/view/AKR20210906100700017?section=society/all" target="_blank">[게시판]
+                        한독, 굿네이버스와 결식아동 식사 지원 사업 진행</a>
+                </dd>
+            </dl>
+            <hr>
+            <h3>언론사별 가장 많이 본 뉴스</h3>
+            <!-- 테이블 요소 : 2열 2행-->
+            <table style="width: 1000px;">
+                <tr>
+                    <!-- 1행 -->
+                    <td><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=015&aid=0004600689&rankingType=RANKING"
+                            target="_blank">"카뱅, 민낯 이제부터 나온다"…증권가 술렁이는 이유<img
+                                src="https://imgnews.pstatic.net/image/015/2021/09/06/0004600689_001_20210906135203127.jpg?type=w647"
+                                target="_blank" width="80px" hegiht="50"></a></td>
+                    <td><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=015&aid=0004600863&rankingType=RANKING"
+                            target="_blank">월세방 사는데 재난지원금 못 받는다니…" 직장인들 아우성<img
+                                src="https://imgnews.pstatic.net/image/015/2021/09/06/0004600863_001_20210906150103305.jpg?type=w647"
+                                target="_blank" width="80px" hegiht="50"></a></td>
+                </tr>
+                <tr>
+                    <!-- 2행 -->
+                    <td><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=015&aid=0004600878&rankingType=RANKING"
+                            target="_blank">"제대로 배우길"…BJ, 수백만원 별풍선 쏜 중학생에 '경고'<img
+                                src="https://imgnews.pstatic.net/image/015/2021/09/06/0004600878_001_20210906150503373.jpg?type=w647"
+                                alt="" width="80px" height="50px"></a></td>
+                    <td><a href="https://imgnews.pstatic.net/image/015/2021/09/06/0004600919_001_20210906151903331.jpg?type=w647"
+                            target="_blank">코스피 8% '찔끔' 오를 때 20% 뛰었다…요즘 뜨는 투자처<img
+                                src="https://imgnews.pstatic.net/image/015/2021/09/06/0004600919_001_20210906151903331.jpg?type=w647"
+                                alt="" width="80px" height="50px"></a></td>
+                </tr>
+            </table>
+
         </main>
         <!--4.하단 정보-->
         <hr>
         <footer>
             <address>
-                <a href="https://map.naver.com/v5/search/%EB%8C%80%ED%98%B8%EB%B9%8C%EB%94%A9/place/18798066?c=14140531.9652892,4508933.7061265,15,0,0,0,dh&placePath=%3Fentry%253Dbmp"><img src="./images/map.png" alt="지도 아이콘" width="15px"></a>
+                <a
+                    href="https://map.naver.com/v5/search/%EB%8C%80%ED%98%B8%EB%B9%8C%EB%94%A9/place/18798066?c=14140531.9652892,4508933.7061265,15,0,0,0,dh&placePath=%3Fentry%253Dbmp"><img
+                        src="./images/map.png" alt="지도 아이콘" width="15px"></a>
                 &nbsp;서울시 강남구 대호빌딩 8층&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://www.instagram.com/doinisdoin/?hl=ko"><img src="./images/insta.jpeg" alt="인스타 아이콘"width="15px"></a>
-                &nbsp;대표: Doin Harper Lee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                <a href="index.html"><img src="./images/call.jpeg" alt="전화 아이콘"width="15px"></a>
+                <a href="https://www.instagram.com/doinisdoin/?hl=ko"><img src="./images/insta.jpeg" alt="인스타 아이콘"
+                        width="15px"></a>
+                &nbsp;대표: Doin Harper Lee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="index.html"><img src="./images/call.jpeg" alt="전화 아이콘" width="15px"></a>
                 &nbsp;전화: 010-333-3333
                 <!-- address 요소: 주소를 담는 요소 -->
             </address>

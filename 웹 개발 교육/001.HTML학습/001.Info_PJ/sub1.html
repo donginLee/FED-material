@@ -8,21 +8,54 @@
         /* css 코딩구역! */
         /* 이 방식은 페이지 내부에  */
         /* 문법: 선택자{속성: 값} */
-        body{
-            background: rgb(230,240,254);
+        body {
+            background: rgb(230, 240, 254);
         }
-        a{
+
+        a {
             text-decoration: none;
-            color:#000;
+
         }
-        footer{
+
+        footer {
             text-align: center;
-            padding: 30px 0; /* 안쪽 여백 위 아래 19px */
-          
+            padding: 30px 0;
+            /* 안쪽 여백 위 아래 19px */
+
         }
-        address{font-style: normal;}
+
+        address {
+            font-style: normal;
+        }
+
+        /* 피겨박스 이미지 */
+        figure img {
+            width: 100%;
+        }
+
+        figcaption {
+            font-size: 9px;
+        }
+
+        span {
+            color: red
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+       .b1{
+            font-weight: bold;
+            color: royalblue;
+        }
+        #tbl{
+            width: 316px;
+            border:1px solid red;
+            padding 15px;
+        }
     </style>
-    
+
 </head>
 
 <body>
@@ -41,31 +74,44 @@
             auto: 양쪽 등분
         -->
         <!--1.상단영역-->
-        <header style = "text-align: center;"">
+        <header style="text-align: center;">
             <!--1-1.제목-->
-            <h1 style = "font-size:40px" >네이버 요약 뉴스 - 정치 페이지</h1>
+            <h1 style=" font-size:40px"  >네이버 요약 뉴스 - 정치 페이지</h1>
             <!--1-2.메뉴-->
             <nav>
-                <a href="index.html"> <img src="./images/logo.png" alt="로고" style="width: 20px ;vertical-align: bottom;"></a>
+                <a href="index.html" title="처음으로 가기"> <img src="./images/logo.png" alt="로고"
+                        style="width: 20px ;vertical-align: bottom;"></a>
                 <!--
                     image는 가로만 설정해도 비율에 맞게 변경
                 -->
-                
+
                 &nbsp;
-                <a href="sub1.html" style ="color:red">정치</a> |
-                <a href="sub2.html" style ="color:orange">경제</a> |
-                <a href="sub3.html" style ="color:green">사회</a> |
-                <a href="sub4.html" style ="color:blue">IT과학</a> |
-                <a href="sub5.html" style ="color:purple">TV연예</a>
+                <a href="sub1.html" style="color:red">정치</a> |
+                <a href="sub2.html" style="color:orange">경제</a> |
+                <a href="sub3.html" style="color:green">사회</a> |
+                <a href="sub4.html" style="color:blue">IT과학</a> |
+                <a href="sub5.html" style="color:purple">TV연예</a>
             </nav>
         </header>
         <hr>
-         <!--3.메인 컨텐츠-->
+        <!--3.메인 컨텐츠-->
         <main style="font-size: 15px;">
+            <!-- 언론사 정보영역 -->
+            <div>
+                <img src="https://t1.daumcdn.net/cfile/tistory/242F4D455889DA4908" alt="연합뉴스로고" width="50px">
+            </div>
             <!-- 기사 제목 -->
-            <h1>김총리, 삼성바이오 방문…"백신주권 확보 역할 당부"</h1>
+            <h1>김총리, 삼성바이오 방문…"<span>백신</span>주권 확보 역할 당부"</h1>
             <!-- 기사 이미지 -->
-            <img src="./images/article1.jpeg" alt="정치" style="width:100%">
+            <figure>
+                <img src="./images/article1.jpeg" alt="정치">
+                <figcaption>
+                    <span class="b1">삼성바이오로직스</span> 둘러보는 김부겸 총리
+                    (인천=연합뉴스) 김승두 기자 = 김부겸 국무총리(앞줄 가운데)가 3일 오후 코로나19 <span>백신</span> 위탁생산 현장인 인천시 송도 <span class="">삼성바이오로직스</span>를 방문해 존림
+                    대표이사(맨 오른쪽) 등과
+                    함께 홍보관을 둘러보고 있다. 2021.9.3 kimsdoo@yna.co.kr
+                </figcaption>
+            </figure>
             <!--
                 img 요소: 이미지 불러옴
                 - src : 이미지 경로
@@ -73,21 +119,120 @@
                 (alternatinve text - 대체 텍스트 웹 접근성을 위한 필수 속성)
             -->
             <!-- 기사내용 -->
-            (서울=연합뉴스) 조민정 기자 = 김부겸 국무총리는 3일 오후 인천 연수구 삼성바이오로직스 본사를 찾아 백신·치료제 생산 현장을 둘러봤다.<br><br>
+            <p>(서울=연합뉴스) 조민정 기자 = 김부겸 국무총리는 3일 오후 인천 연수구 <span class="b1">삼성바이오로직스</span> 본사를 찾아 <b><span>백신</span>·치료제 생산 현장</b>을 둘러봤다. <abbr
+                    title="아주 잘 봄">아잘봄</abbr></p>
+            <p><span class="b1">삼성바이오로직스</span><sup>①</sup> 는 <em>한미 정상회담을 계기</em>로 모더나와 <strong><span>백신</span> 위탁생산 계약</strong>을 체결한 바 있다.</p>
+            <p>김 총리는 이 자리에서 <q>
+                    국민의 삶을 보호하기 위해 <em><ins>코로나</ins> <span>백신</span>이 얼마나 중요한지</em> 절감하고 있다.
+                    <span class="b1">삼성바이오로직스</span>가 우리나라의 <mark><span>백신</span></mark> 주권 확보를 위해 적극적인 역할을 해주시기를 바란다
+                </q>고 말했다.</p>
+            <p>김 총리는 "삼성그룹이 바이오산업에서의 높은 성취를 이뤄 젊은 세대의 일자리<sub>job</sub>를 만들겠다는 야심 찬 비전을 보여줬다"며 "국민들의 삶에 크게 기여하는 만큼 다음
+                세대를 위한 준비를 철저히
+                해주시기를 바란다"고 했다.</p>
+            <p>이날 방문에는 존림 <span class="b1">삼성바이오로직스</span> 대표이사 사장과 이인용 삼성전자 대외협력 담당 사장, 고한승 삼성바이오에피스 사장 등이 참석했다. <del>나도 참석하고 싶었다.</del></p>
+            <blockquote
+                cite="https://ko.wikipedia.org/wiki/%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4">
+                코로나바이러스(영어: Coronavirus, 문화어: 코로나비루스)는 코로나바이러스과(영어: Coronaviridae)의 코로나바이러스아과(Coronavirinae)에
+                속하는 RNA 바이러스의 총칭으로,[1][2] 사람과 동물의 호흡기와 소화기계 감염을 유발한다. 주로 점막전염(粘膜感染), 비말전파(飛沫傳播)로 쉽게 감염되며, 사람에게는 일반적으로
+                경미한 호흡기 감염을 일으키지만 치명적인 감염을 유발하기도 하며, 소와 돼지는 설사, 닭은 호흡기 질환이 발생하기도 한다.</blockquote>
+            chomj@yna.co.kr<br>
+            조민정(chomj@yna.co.kr) <a href="https://www.yna.co.kr/view/AKR20210903135800001?input=1195m"
+                target="_blank">원문기사</a>
+            <hr>
+            <small>①<span class="b1">삼성바이오로직스</span>는 바이오 의약품 위탁생산을 목적으로 인천 송도에 설립한 삼성그룹 계열 회사다.</small>
 
-삼성바이오로직스는 한미 정상회담을 계기로 모더나와 백신 위탁생산 계약을 체결한 바 있다.
+            <hr>
+            <h3>오늘의 명화</h3>
+            <img src="https://www.w3schools.com/html/img_the_scream.jpg" alt="뭉크의 절규" style="width: 100px;">
+            <br>
+            <hr>
+            <h3>
+                연합뉴스 주요뉴스
+            </h3>
+            <ul>
+                <li><a href="http://www.thetopic.co.kr/camp/frog/w_a2/index_sang_adtive.html?urlGubun=adtive_w_yh&adpx_be_cd=868_19817_4042_112655"
+                        target="_blank">배우 김상중, 주식으로 대박 수익낸 업체와 손잡아 화제</a></li>
+                <li><a href="https://www.kodcad.kr/ad/43/568f3987252f538add5408b6b73c2a7c.html?k_referer=https%3A%2F%2Fwww.yna.co.kr%2F"
+                        target="_blank">흡연습관 그대로? 금연에 성공하는 "이것" 연일 화제</a></li>
+                <li><a href="http://ebong2018.cafe24.com/landing/landing05.php?utm_source=adtive2&utm_medium=cpp&utm_content=mo&adpx_be_cd=868_19818_1559_112954"
+                        target="_blank">이명 귓속 삐 울리는 소리 방치했다간</a></li>
+            </ul>
+            <hr>
+            <h3>연합뉴스 랭킹 뉴스</h3>
+            <ol>
+                <li>
+                    <a href="" target="_blank">
 
-김 총리는 이 자리에서 "국민의 삶을 보호하기 위해 백신이 얼마나 중요한지 절감하고 있다. <br><br>삼성바이오로직스가 우리나라의 백신 주권 확보를 위해 적극적인 역할을 해주시기를 바란다"고 말했다.
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+
+                    </a>
+                </li>
+            </ol>
+            <hr>
+            <h3>분야별 주요뉴스</h3>
+            <dl>
+                <dt>정치</dt>
+                <dd><a href="https://www.yna.co.kr/view/AKR20210906102700001?section=politics/all" target="_blank">[1보]
+                        문대통령 "새 방역체계로 점진적 전환 모색"</a>
+                </dd>
+                <dt>경제</dt>
+                <dd><a href="https://www.yna.co.kr/view/AKR20210906020900530?section=economy/all" target="_blank">"여성
+                        경력단절 예방법, 여성 선배·전문가 조언 들어보세요"</a>
+                </dd>
+                <dt>사회</dt>
+                <dd><a href="https://www.yna.co.kr/view/AKR20210906100700017?section=society/all" target="_blank">[게시판]
+                        한독, 굿네이버스와 결식아동 식사 지원 사업 진행</a>
+                </dd>
+            </dl>
+            <hr>
+            <h3>언론사별 가장 많이 본 뉴스</h3>
+            <!-- 테이블 요소 : 2열 2행-->
+            <table style="width: 1000px;" id="tbl">
+                <tr>
+                    <!-- 1행 -->
+                    <td><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=015&aid=0004600689&rankingType=RANKING"
+                            target="_blank">"카뱅, 민낯 이제부터 나온다"…증권가 술렁이는 이유<img
+                                src="https://imgnews.pstatic.net/image/015/2021/09/06/0004600689_001_20210906135203127.jpg?type=w647"
+                                target="_blank" width="80px" hegiht="50"></a></td>
+                    <td><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=015&aid=0004600863&rankingType=RANKING"
+                            target="_blank">월세방 사는데 재난지원금 못 받는다니…" 직장인들 아우성<img
+                                src="https://imgnews.pstatic.net/image/015/2021/09/06/0004600863_001_20210906150103305.jpg?type=w647"
+                                target="_blank" width="80px" hegiht="50"></a></td>
+                </tr>
+                <tr>
+                    <!-- 2행 -->
+                    <td><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=015&aid=0004600878&rankingType=RANKING"
+                            target="_blank">"제대로 배우길"…BJ, 수백만원 별풍선 쏜 중학생에 '경고'<img
+                                src="https://imgnews.pstatic.net/image/015/2021/09/06/0004600878_001_20210906150503373.jpg?type=w647"
+                                alt="" width="80px" height="50px"></a></td>
+                    <td><a href="https://imgnews.pstatic.net/image/015/2021/09/06/0004600919_001_20210906151903331.jpg?type=w647"
+                            target="_blank">코스피 8% '찔끔' 오를 때 20% 뛰었다…요즘 뜨는 투자처<img
+                                src="https://imgnews.pstatic.net/image/015/2021/09/06/0004600919_001_20210906151903331.jpg?type=w647"
+                                alt="" width="80px" height="50px"></a></td>
+                </tr>
+            </table>
         </main>
         <!--4.하단 정보-->
+
         <hr>
         <footer>
             <address>
-                <a href="https://map.naver.com/v5/search/%EB%8C%80%ED%98%B8%EB%B9%8C%EB%94%A9/place/18798066?c=14140531.9652892,4508933.7061265,15,0,0,0,dh&placePath=%3Fentry%253Dbmp"><img src="./images/map.png" alt="지도 아이콘" width="15px"></a>
+                <a
+                    href="https://map.naver.com/v5/search/%EB%8C%80%ED%98%B8%EB%B9%8C%EB%94%A9/place/18798066?c=14140531.9652892,4508933.7061265,15,0,0,0,dh&placePath=%3Fentry%253Dbmp"><img
+                        src="./images/map.png" alt="지도 아이콘" width="15px"></a>
                 &nbsp;서울시 강남구 대호빌딩 8층&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://www.instagram.com/doinisdoin/?hl=ko"><img src="./images/insta.jpeg" alt="인스타 아이콘"width="15px"></a>
-                &nbsp;대표: Doin Harper Lee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                <a href="index.html"><img src="./images/call.jpeg" alt="전화 아이콘"width="15px"></a>
+                <a href="https://www.instagram.com/doinisdoin/?hl=ko"><img src="./images/insta.jpeg" alt="인스타 아이콘"
+                        width="15px"></a>
+                &nbsp;대표: Doin Harper Lee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="index.html"><img src="./images/call.jpeg" alt="전화 아이콘" width="15px"></a>
                 &nbsp;전화: 010-333-3333
                 <!-- address 요소: 주소를 담는 요소 -->
             </address>
@@ -111,4 +256,4 @@
     -->
 </body>
 
-</html>
+</html> target="_blank"
