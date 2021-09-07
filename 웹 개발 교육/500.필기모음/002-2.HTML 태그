@@ -64,3 +64,5 @@
 32. table - 테이블 전체 분모요소
 33. tr : 테이블 레코드 (table row)
 34. td : 테이블 데이터요소 (table data)
+[   기능요소    ]
+35. button : 버튼모양의 요소
