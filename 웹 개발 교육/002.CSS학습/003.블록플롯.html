@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>003.블록요소의 float </title>
+        <style>
+            /* 
+                [   블록요소의 float    ]
+                    - 필요성: 블록요소는 옆에 다른 요소가 올 수 없음 그래서 옆으로 흐르게 하는 속성센팅이 필요!
+                    - float 속성값:
+                        1) left -> 설정 된 요소는 오른쪽에 다른 요소는 오른쪽에 배치
+                        2) left -> 설정 된 요소는 왼쪽에 다른 요소는 왼쪽에 배치
+                    
+                    [ float만 설정한 경우 생기는 문제   ]
+                    - 하위 요소가 float설정된 요소를 인지하지 못해 위로 올라오게 됨.
+                    - 이것을 위해 다음 혹성셋팅 필수!
+                    - 대상: float을 끊어줄 요소( 본인 포함 x ) 
+                    - clear 속성값
+                        1) left -> 이전 요소가 float:left일 때
+                        2) right -> 이전 요소가 float:right일 때
+                        3) both -> 이전 요소가 float:left or right 무엇이든
+
+                        -> 일반적으로 float을 적용받지 않을 요소에게 clear:both를 준다!(경우1)
+
+                [  부모요소가 자식요소의 float 때문에 망가질 때 ]
+                    1. 마지막 블록자식요소를 넣고 clear:bloth를 함
+                    (경우2)
+                    
+                    2. 가상요소로 ::after로 clear:both 설정함
+                    (경우3)
+                        ex) 부모요소::after{
+                            content:'';
+                            display: block;
+                            clear: both;
+                        }
+
+                    3. float된 자식요소의 부모박스에 overflow:hidden처리를 함
+                        -> 자식요소 숨기기를 할 경우 float으로 요소가 유동적인 상태를 마무리하는 속성 내부적 셋팅 됨!
+                        -> 단점: 만약 자식요소가 부모요소 바깥으로 나가야 할 경우 숨겨져서 제약이 따르게 됨.
+                [   기존에 float 셋팅된 요소 없애기 ]
+                float: none;
+                        */
+            h1{
+                text-align: center;
+
+            }
+            .wrap{
+                bottom: 5px dashed rgb(116, 1, 1);
+                margin: 10px;
+                padding: 15px;
+                border: 15px dotted royalblue;
+            }
+            /* 블록박스 공통 디자인*/
+            .bx{
+                width:300px;
+                height: 200px;
+                bottom: 5px ridge black;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                border: 5px solid black;
+            }
+            /* 개별 배경 디자인 박스 */
+
+            .bx1{
+                background-image: url(imgs/dc1.png);
+            }
+            .bx2{
+                background-image: url(imgs/dc2.png);
+            }
+            .bx3{
+                background-image: url(imgs/dc3.png);
+            }
+            .bx4{
+                background-image: url(imgs/dc4.png);
+            }
+
+            .fll{
+                float: left;
+            }
+            .flr{
+                float: right;
+            }
+            .clb{
+                clear:both;
+                /* 양쪽 다 지워! */
+            }
+            .cll{
+                clear:left;
+                /* 왼쪽 다 지워! */
+            }
+            .clr{
+                clear:right;
+                /* 오른쪽 다 지워! */
+            }
+
+            .flclb::after{
+                content:"";/*마치 span*/
+                display :block;
+                clear: both;
+            }
+            /* float 해제용 가상요소 */
+            /* 
+                가상요소란?
+                어떤 요소의 내부에 자식요소로 직접 태그를 쓰지 않고 요소를 넣는 방법
+
+                    -형식:
+                        요소::before{
+                            content: "나야나";
+                        }
+                        
+                        -> 콜론을 두 개 쓰는 이유?
+                            가상클래스랑 구분하기 위해
+
+                1)  ::before 맨앞에 넣기
+                2)  ::after 맨뒤에 넣기
+                    -> 필수 속성으로 content: 값;
+                    -> contect값으로 url() 을 쓰면 이미지
+                       글자를 쓰면 문자데이터가 들어간다!
+                    -> 마치 span 태그를 넣은 것과 같아짐
+                    -> display: block로 쓰면 마치 div를 쓴 것과 같아짐.
+            */
+            .case4{overflow: hidden;}
+            .case4 .bx{ float: left;}
+        </style>
+    </head>
+    <body>
+        <h1>003. 블록요소의 float</h1>
+        <h2>경우1</h2>
+        <div class="wrap">
+            <div class="bx bx1 fll "></div>
+            <div class="bx bx2 flr"></div>
+            <div class="bx bx3 clb"></div>
+            <div class="bx bx4"></div> 
+        </div>
+        <br>
+        <br>
+
+        <h2>경우2</h2>
+        <div class="wrap">
+            <div class="bx bx1 fll "></div>
+            <div class="bx bx2 flr"></div>
+            <div class="bx bx3 clb fll"></div>
+            <div class="bx bx4 flr"></div>
+            <div class="clb"></div>
+        </div>
+
+        <h2>경우3</h2>
+        <div class="wrap flclb">
+            <div class="bx bx1 fll "></div>
+            <div class="bx bx2 flr"></div>
+            <div class="bx bx3 clb fll"></div>
+            <div class="bx bx4 flr"></div>
+        </div>
+        
+        <h2>경우4</h2>
+        <div class="wrap case4">
+            <div class="bx bx1"></div>
+            <div class="bx bx2"></div>
+            <div class="bx bx3"></div>
+            <div class="bx bx4"></div>
+        </div>
+
+    </body>
+</html>

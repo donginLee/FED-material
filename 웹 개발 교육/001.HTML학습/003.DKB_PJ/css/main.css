@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+html,
+body {
+    margin: 0%;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    /* 배경 한번에 셋팅하기*/
+    /*background: 색 이미지 반복 고정 위치/크기;
+ background: 색이반고윙크*/
+    background: url(../images/bg_mainvisual.jpg) no-repeat fixed center / cover;
+}
+
+/* 스크롤바 트랙 변경하기 */
+/* -webkit-벤더사명(크롬,사파리)접두어 */
+
+.scbar::-webkit-scrollbar {
+    /* 전체 스크롤바 크기 */
+    width: 7px;
+}
+
+.scbar::-webkit-scrollbar-thumb {
+    /* 스크롤바 */
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.scbar::-webkit-scrollbar-track {
+    /* 스크롤바 트렉 */
+    background-color: #999;
+    border-radius: 5px;
+}
+
+
+/* 1. 상단영역 */
+/* 로고 */
+.logo img {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+/* 2. 메인영역 */
+/* 캐릭터 박스 */
+
+#cbx {
+    width: 90%;
+    height: 400px;
+    /*높이값이 없을 때 float 때문에 */
+    margin: 0 auto;
+    margin-top: 50px;
+    /*마영오: 가로중앙정렬*/
+    /*outline: 5px dashed lime;*/
+}
+
+/* 가상요소로 float해제 */
+.clb::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*개별 캐릭터 박스 공통*/
+.cat {
+    width: 25%;
+    /* 4등분 */
+    padding: 5px;
+    /*높이값이 없으면 auto이고 내용만큼 늘어남! 이 경우 내용은 image */
+    /* outline: 5px dotted blue; */
+    /* 마진, 패딩 포함하기 속성 */
+    box-sizing: border-box;
+    float: left;
+    transition: 0.5s ease-in;
+}
+
+/* 캐릭터 개별 박스에 마우스 오버시 마진top 올라가기*/
+.cat:hover {
+    height: 250px;
+    margin-top: -50px;
+}
+
+
+/* 캐릭터 이미지 */
+.ci img {
+    width: 100%;
+
+    /* 이미지의 height는 자동(비율유지)*/
+}
+
+.ci span img {
+    width: 40%;
+
+}
+
+.ci span {
+    display: block;
+    text-align: center;
+    margin-top: -22%;
+}
+
+.ci span img:first-child {
+    display: none;
+}
+
+.cat:hover .ci span img:first-child {
+    display: inline;
+}
+
+.cat:hover .ci span img:last-child {
+    display: none;
+}
+
+/* 캐릭터 설명 박스 */
+.cd {
+    background: url(../images/eachBG.jpg) no-repeat center/ cover;
+    height: 0px;
+    /* 마우스 오버시 250px */
+    overflow-y: auto;
+    /* 넘치면 scrol bar*/
+    margin-top: 15px;
+    border-radius: 20px 0 0 20px;
+
+    /*  
+    2) 시간
+    3) 이징- 애니메이션 가속도 설정
+            ease-in 시작할 떄 천천히
+            ease-out 끝날 때 처넟ㄴ히
+            ease-in-out 시작과 끝에 천천히
+            linear 등속도
+            ease 약한정도로 시작과 끝에 천천히
+    4) 지연시간 - 애니메이션 시작 전 대기시간 -초단위(뒤에 S)
+        ->왜 속성값을 쓰게 해놨나?
+        속시이지의 순서로 속성별 설정을 모두 다르게 여러개를 설정할 수 있음!! 아주 뛰어남!!
+        예) transform: width .3s ease-in, height .5s ease-out .5s; */
+
+    transition: height .8s ease-out;
+}
+
+/* 캐릭터 개별 박스에 마우스 오버시 .cd높이값 변경 */
+.cat:hover .cd {
+    height: 250px;
+}
+
+/* 캐릭터 설명 타이틀 */
+.cd h3 {
+    padding: 20px;
+}
+
+/* 캐릭터 설명 문단*/
+.cd p {
+    padding: 10px;
+    font: 14px/2 '맑은 고딕', '돋움', arial;
+    text-align: justify;
+    /* font: 스타일 두께 크기/줄간격 글자체;
+    font: 스 두 크/줄 체; */
+    border-radius: 10px;
+}
+
+.info {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding:15px;
+
+}
+
+ul.bm {
+    margin: 0 auto;
+    padding: 3px;
+    width: 720px;
+    max-width: 90%;
+    list-style: none;
+    text-align: center;
+    
+}
+
+ul.bm::after{
+    content: '';
+    display: block;
+    clear:both;
+}
+ul.bm li{
+    float:left;
+    padding:0 5px;
+}
+ul.bm a{
+    color: #222;
+    text-decoration: none;
+    font: bold 14px/2 "맑은 고딕";
+}
+ul.bm a:hover{
+color: red;
+text-decoration: underline;
+}
+
+/* 주소 */
+.info address{
+    width: 720px;
+    max-width:90%;
+    font: normal 10px/2 "맑은 고딕";
+    margin:20px auto;
+    text-align: center;
+    border: 5px double #888;
+    padding: 10px 0;
+}
+
+#blogo{
+    text-align: center;
+}
